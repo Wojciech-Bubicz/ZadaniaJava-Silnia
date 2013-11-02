@@ -1,4 +1,4 @@
-package javahive.silnia.impl;
+﻿package javahive.silnia.impl;
 
 import javahive.silnia.KalkulatorSilni;
 
@@ -14,15 +14,16 @@ import javahive.silnia.KalkulatorSilni;
  */
 
 
-public class SzybkiKalkulatorSilni implements KalkulatorSilni{
+public class SzybkiKalkulatorSilni implements KalkulatorSilni {
     //metoda licząca silnie w sposób rekurencyjny
-    public long liczLong(long podstawa){
-    	if (podstawa < 0) {
-    		throw new ArithmeticException();
-    	}
-        if(podstawa>0) {
+    public long liczLong(long podstawa) {
+        if (podstawa < 0) {
+        	throw new ArithmeticException();
+        }
+    	if (podstawa > 0) {
             return podstawa*liczLong(podstawa-1);
-        } else {
+        }
+    	else {
             return 1;
         }
     }

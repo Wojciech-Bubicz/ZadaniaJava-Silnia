@@ -1,4 +1,4 @@
-package javahive.silnia.impl;
+﻿package javahive.silnia.impl;
 
 import java.math.BigDecimal;
 

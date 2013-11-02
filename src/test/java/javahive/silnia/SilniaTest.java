@@ -1,4 +1,4 @@
-package javahive.silnia;
+﻿package javahive.silnia;
 
 
 import javahive.silnia.KalkulatorSilni;
@@ -130,9 +130,49 @@ public class SilniaTest {
     
     @Test
     public void t008WszystkieKalkulatorySilniPowinnyLiczycZero(){
-    	//TODO napisać test który sprawdzi czy wszystkie kalkulatory liczą 0!
-    	Assert.fail();
+    	//given
+		KalkulatorSilni[]wszytkieKalkulatory={
+				new SzybkiKalkulatorSilni(),
+				new OptymalnyKalkulatorSilni(),
+				new KalkulatorSilniGuava(),
+				new KalkulatorSilniBigDecimal(),
+				new KalkulatorSilniNieRekurencyjny()
+		};
+        final int silnia=0;
+    
+	    for(KalkulatorSilni kalkulator:wszytkieKalkulatory){
+	    //when
+	        String wynik=kalkulator.licz(silnia);
+	    //then
+	        Assert.assertEquals("1", wynik);
+	    }
     }
     
-
+    @Test
+    public void t009WszystkieKalkulatorySilniPowinnyZwracacTeSamaLiczbeDlaWartosciUjemnych(){
+    	//given
+		KalkulatorSilni[]wszytkieKalkulatory={
+				new SzybkiKalkulatorSilni(),
+				new OptymalnyKalkulatorSilni(),
+				new KalkulatorSilniGuava(),
+				new KalkulatorSilniBigDecimal(),
+				new KalkulatorSilniNieRekurencyjny()
+		};
+        final int silnia=-100;
+    
+	    for(KalkulatorSilni kalkulator:wszytkieKalkulatory) {
+		    //when
+	    	try {
+	    		String wynik=kalkulator.licz(silnia);
+	    	}
+	        catch (IllegalArgumentException e) {
+	        	continue;
+	        }
+	    	catch (ArithmeticException e) {
+	    		continue;
+	    	}
+		    //then
+	        Assert.fail();
+	    }
+    }
 }
