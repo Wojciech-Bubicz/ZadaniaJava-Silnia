@@ -1,11 +1,11 @@
-package javahive.silnia.impl;
+﻿package javahive.silnia.impl;
 
 
 import javahive.silnia.KalkulatorSilni;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
- *
+ * th th 
  * @author Marcin Grabowiecki
  * 
  * proszę zaimplementować algorytm analogiczny jak dla SzybkaSilnia
