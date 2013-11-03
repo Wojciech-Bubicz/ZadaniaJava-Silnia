@@ -13,7 +13,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
  ddddd* 
  * proszę zaimplementować algorytm analogiczny jak dla SzybkaSilnia
  * jednak należy się oprzeć na na typie BigDecimal
- * 
+ - test na komentarzu * 
  */
 
 public class KalkulatorSilniBigDecimal implements KalkulatorSilni {
